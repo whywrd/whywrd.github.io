@@ -1,0 +1,43 @@
+@media screen and (min-width: 500px) {
+    body {
+        width: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .body-container {
+        min-width: 500px;
+    }
+}
+
+.header {
+    text-align: center;
+}
+
+.resume {
+    margin: -10 0 0 0;
+}
+
+.project {
+    margin: 10;
+    padding: 10;
+    background-color: lightgray;
+}
+
+.project-title {
+    font-weight: bold;
+    padding: 0 0 5 0;
+}
+
+.description {
+    padding: 10;
+}
+
+.source {
+    font-size: 15;
+}

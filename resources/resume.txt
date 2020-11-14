@@ -1,0 +1,153 @@
+\documentclass[draft]{article}
+
+% packages
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[empty]{fullpage}
+\usepackage{xcolor}
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+\definecolor{mygrey}{gray}{.85}
+
+
+% custom commands
+\newcommand{\resumeheading}[1]{
+    \noindent
+    \fcolorbox{mygrey}{mygrey}{%
+        \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\large#1}}
+}
+
+\newcommand{\resumesubheading}[2]{
+    \begin{tabularx}{\linewidth}{Xc}
+        \textbf{#1} & #2
+    \end{tabularx}
+    \vspace{-4ex}
+}
+
+\newcommand{\splitresumesubheading}[3]{
+    \begin{tabularx}{\linewidth}{XcX}
+	    	\textbf{#1} & #2 \\
+		    \textit{#3}
+    \end{tabularx}
+    \vspace{-3ex}
+}
+
+\newcommand{\resumesubsubheading}[2]{
+    \begin{tabularx}{\linewidth}{Xc}
+		\textit{#1} & \textit{#2} \\
+    \end{tabularx}
+    \vspace{-4ex}
+}
+
+\newcommand{\resumeitem}[1]{
+    \item #1 
+    \vspace{-2pt}
+}
+
+\newcommand{\resumeheader}{%
+    \begin{tabularx}{\linewidth}{XrXr}
+        \multirow{3}{*}{\textbf{\LARGE{Will Hayward}}} & {whywrd@gmail.com} \\
+        & {github: }\href{https://github.com/whywrd}{whywrd} \\ & {(805) 570-0371} \\
+        \end{tabularx}
+}
+
+
+\begin{document}
+
+\noindent
+\resumeheader
+
+\resumeheading{Education}
+\begin{itemize}
+    \item \splitresumesubheading{University of California Berkeley}{2009 -- 2013}
+                                {Statistics and Economics Double Major: 3.82 GPA}
+    \begin{itemize}
+        \resumeitem{Introduced to programming via statistical programming with R}
+        \resumeitem{Experience with regression models, time series analysis and machine learning methods}
+    \end{itemize}
+    \item \resumesubheading{Community College of San Francisco}{2017}
+    \begin{itemize}
+        \resumeitem{Programming Fundamentals in C++ ( CS110b) and Data Structures and Algorithms in C++ (CS110c)}
+        \resumeitem{Teachers assistant for CS110b}
+    \end{itemize}
+\end{itemize}
+
+\resumeheading{Experience}
+\begin{itemize}
+    \item \splitresumesubheading{AppLovin}{April 2014 -- Today}
+                                {Summary}
+    \begin{itemize}
+        \resumeitem{Designed, built and anaylyzed systems critical to AppLovin's growth}
+        \resumeitem{Built out data pipelines and KPI reporting to drive decision-making across the company}
+    \end{itemize}
+    %
+    \item \resumesubsubheading{Sr. Product Analyst}{January 2018 -- Today}
+    \begin{itemize}
+        \resumeitem{Designed, implemented and maintained the org’s Salesforce instance i.e. schema design and data flow}
+        \resumeitem{Integrated internal and external data services into Salesforce to further facilitate automation and reporting}
+        \vspace{-3ex}
+        \begin{itemize}
+            \resumeitem{Integrated Hubspot and Google Analytics to provide data to the marketing team}
+            \resumeitem{Integrated Apptopia to scrape app ranks from the Android and iOS stores}
+            \resumeitem{Integrated Slack as an alert system to notify users /teams of important events}
+            \resumeitem{Integrated IronSource to facilitate contract flows and parse relevant contract terms}
+        \end{itemize}
+    \end{itemize}
+    %
+    \item \resumesubsubheading{Product Analyst}{April 2015 -- January 2018}
+    \begin{itemize}
+        \resumeitem{Developed a reporting framework in Python}
+        \begin{itemize}
+            \resumeitem{Based on MVC pattern, but excludes the controller layer because the reports are non interactive (think email reports)}
+            \resumeitem{This framework has been extended to support all internal reporting at AppLovin}
+        \end{itemize}
+        \resumeitem{Built out internal processes e.g. invoicing, tracking testing, design project management}
+    \end{itemize}
+    %
+    \item \resumesubsubheading{Account Manager}{October 2014 -- April 2015}
+    \begin{itemize}
+        \resumeitem{Owned a book of 10 clients (including Apple, Uber, Facebook) and advised them on how to buy on our platform}
+    \end{itemize}
+    %
+    \item \resumesubsubheading{Business Analyst}{March 2014 -- October 2014}
+    \begin{itemize}
+        \resumeitem{Wrote a creative analysis suite in R to analyze the effectiveness of different ads}
+        \resumeitem{Wrote a log parser in Python to help other analysts convert request logs into an Excel friendly format}
+    \end{itemize}
+    %
+\end{itemize}
+
+\resumeheading{Projects}
+\begin{itemize}
+    \item \resumesubheading{nothe.me}{}
+    \begin{itemize}
+        \resumeitem{A website which wraps Tumblr’s API and provides access to Tumblr with a minimal UI, minimal JavaScript dependencies, and all content rendered server side.}
+        \resumeitem{Stack: Linux, Nginx, Python}
+        \resumeitem{Other technologies: Docker, Flask, Jinja, Sass, LetsEncrypt}
+        \resumeitem{Noteworthy features: separate desktop / mobile sites, ability to filter by post type, 2FA for logging into Tumblr so that users can perform actions such as: like, reblog, and follow}
+    \end{itemize}
+    \item \resumesubheading{drct.cc}{}
+    \begin{itemize}
+        \resumeitem{Link shortener}
+        \resumeitem{Stack: Linux, Nginx, Python}
+        \resumeitem{Other technologies: Docker, Flask, Postgres, RabbitMQ, LetsEncrypt}
+        \resumeitem{Interesting design decision: A queue of previously visited pages is the only info stored in cookies. The intention is to store non PII data, but still be able to deduplicate user count in analytics.}
+    \end{itemize}
+\end{itemize}
+
+\resumeheading{Other Skills}
+\begin{itemize}
+    \resumeitem{Languages: Python, C++, Java}
+    \resumeitem{Git, Bash, SQL, Linux, QA, unit testing, technical customer support}
+\end{itemize}
+
+\end{document}
